@@ -68,6 +68,11 @@ string hashNode::getRandValue() {
 	//randomly select one of those words and return it.  That
 	//will be the word that follows your key in your output
 	//function, and it will also be the next key.
-	int r = rand() & currSize;
+	if (currSize == 0){
+		return "";
+	}
+	int r = rand() % currSize;
+	return values[r];
+
 
 }
